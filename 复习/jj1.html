@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul li{list-style: none;}
+        .box{width: 900px;
+            border: 2px solid #0000FF;
+            border-radius: 2px;
+            margin: 20px auto;
+        }
+        .box ul span{
+            text-align: center;
+            margin: 0;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul id="nine"></ul>
+</div>
+<script>
+    var nine=document.getElementById('nine');
+    var str="";
+    for(var i=1;i<=9;i++){
+        str+="<li>";
+        for(var j=1;j<=i;j++){
+            str+="<span>";
+            str+=j+'*'+i+'='+j*i;
+            str+="</span>"
+        }
+        str+="</li>"
+    }
+    nine.innerHTML=str;
+</script>
+</body>
+</html>

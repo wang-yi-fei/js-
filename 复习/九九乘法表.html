@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul li{list-style: none;}
+        .box{width: 900px;
+            border: 2px solid #0000FF;
+            border-radius: 2px;
+            margin: 20px auto;
+        }
+        .box ul span{
+            text-align: center;
+            margin: 0;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .c0{background-color: #0070b9}
+        .c1{background-color: #E9DC51}
+        .hover{background-color: #00A000;}
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <ul id="nine">
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var nine=document.getElementById('nine');
+    var str='';
+    for(var i=1;i<=9;i++){
+        str+='<li>';
+        for(var j=1;j<=i;j++){
+            str+='<span>';
+            str+= j+'*'+i+'='+j*i;
+            str+='</span>'
+        }
+        str+='</li>'
+    }
+    nine.innerHTML=str;
+    var sss=document.getElementById('nine');
+    var lis=sss.getElementsByTagName('li');
+    for(var i=0;i<lis.length;i++){
+        lis[i].className='c';
+        lis[i].className='c'+i%2;
+        lis[i].aaaa='c'+i%2;
+        lis[i].onmouseover=function(){
+            this.className='hover'
+        };
+        lis[i].onmouseout=function(){
+            this.className=this.aaaa
+        }
+    }
+
+
+
+
+</script>

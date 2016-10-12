@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{
+            list-style: none;}
+        ul{margin: 0 auto;}
+        ul li{
+            z-index: 100;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid #f57614;
+            line-height: 30px;
+            float: left;
+            /*background: #0000FF;*/
+            width: 80px;
+            height: 30px;
+            margin-right: 50px;
+        ;}
+        #box{margin: 80px auto;overflow: hidden;
+            width: 900px;}
+        .sb{background: #00A000;width: 346px;height: 200px;display: none;
+        ;}
+        .clear:before,.clear:after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .clo{background: #BC7A00}
+        .find{display: block}
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="clear">
+        <li class="clo">是对方身</li>
+        <li>是对方身</li>
+        <li>是对方身</li>
+    </ul>
+    <div class="sb find">sdfsdf</div>
+    <div class="sb">sdfsdfsd</div>
+    <div class="sb">sdfsdfsd</div>
+</div>
+</body>
+</html>
+<script>
+    var xxx=document.getElementById('box');
+    var dsb=xxx.getElementsByTagName('li');
+    var ddd=xxx.getElementsByTagName('div');
+    for (var i=0;i<dsb.length;i++){
+        var heihei=dsb[i];
+        heihei.wahaha=i;
+        dsb[i].onmouseover=function(){
+            jjj(this.wahaha)
+        }
+    }
+    function jjj(iii){
+        for(var i=0;i<dsb.length;i++){
+            dsb[i].className='';
+            ddd[i].className='sb';
+        }
+        dsb[iii].className='clo';
+        ddd[iii].className='sb find';
+    }
+</script>
